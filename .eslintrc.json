@@ -1,0 +1,82 @@
+{
+  "env": {
+    "es2021": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": ["airbnb-base"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-useless-constructor": "error",
+    "strict": 0,
+    "semi": 0,
+    "@typescript-eslint/semi": 2,
+    "no-var": "error",
+    "comma-dangle": ["error", "never"],
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "object-curly-newline": ["error", { "multiline": true }],
+    "global-require": "off",
+    "arrow-parens": ["error", "as-needed"],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-multi-assign": "off",
+    "no-plusplus": ["off", { "allowForLoopAfterthoughts": true }],
+    "radix": ["error", "as-needed"],
+    "linebreak-style": 0,
+    "indent": [1, 2, { "SwitchCase": 1 }],
+    "no-multiple-empty-lines": ["error", { "max": 2 }],
+    "max-len": [
+      "error",
+      150,
+      {
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreTrailingComments": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "max-params": ["error", 4],
+    "max-depth": ["error", 4],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "keyword-spacing": 1,
+    "react/jsx-props-no-spreading": ["off"],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/named": "off",
+    "max-classes-per-file": "off",
+    "lines-between-class-members": "off",
+    "import/no-useless-path-segments": "off",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-duplicates": "off",
+    "import/no-self-import": "off",
+    "import/no-cycle": "off",
+    "import/no-relative-packages": "off",
+    "import/order": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+
+        // use an array of glob patterns
+        "project": ["./tsconfig.json"]
+      }
+    }
+  }
+}
