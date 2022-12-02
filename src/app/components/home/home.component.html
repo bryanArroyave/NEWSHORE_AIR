@@ -1,0 +1,83 @@
+<ng-container *ngIf="flights$ | async; let data">
+  <ng-container *ngIf="data.path.length">
+
+    <div class="flight__container">
+      <div class="fligth__init">
+        <div class="card card-flight">
+
+          <div class="card__field">
+
+            <p class="cox-title">{{data.origin}}</p>
+            <p class="cox-sub-title">Origen</p>
+
+          </div>
+          <div class="divisor">
+            <p class="cox-sub-title">{{this.getStageMessage(data.path.length - 1)}}</p>
+          </div>
+          <div class="card__field">
+
+            <p class="cox-title">{{data.destination}}</p>
+            <p class="cox-sub-title">Destino</p>
+
+          </div>
+        </div>
+
+        <div class="card card-price">
+
+          <div class="card__field">
+            <div class="card__field-value">
+              <p class="cox-title title-white">{{this.getValue(data.total)}}</p>
+              <p>{{this.currency}} </p>
+            </div>
+            <div class="card__field-buttons">
+              <button class="btn-currency" mat-button [matMenuTriggerFor]="menu">Monedas</button>
+              <button (click)="this.showDetails = !this.showDetails" class="btn-currency"> {{this.showDetails ?
+                'Ocultar'
+                : 'Mostrar'}} detalles</button>
+            </div>
+            <mat-menu #menu="matMenu">
+              <button (click)="this.currency = 'USD'" mat-menu-item>USD</button>
+              <button (click)="this.currency = 'COP'" mat-menu-item>COP</button>
+              <button (click)="this.currency = 'EUR'" mat-menu-item>EUR</button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+
+
+      <ng-container *ngIf="this.showDetails">
+
+        <div class="fligth__list">
+
+
+          <ng-container *ngFor="let flight of data.path; index as i">
+
+            <div class="card card-flight">
+
+              <div class="card__field">
+
+                <p class="cox-title">{{flight.origin}}</p>
+                <p class="cox-sub-title">Origen</p>
+
+              </div>
+              <div class="divisor">
+                <p class="cox-sub-title">
+                  {{flight.flightCarrier}} - {{flight.flightNumber}}
+                </p>
+              </div>
+              <div class="card__field">
+
+                <p class="cox-title">{{flight.destination}}</p>
+                <p class="cox-sub-title">Destino</p>
+
+              </div>
+            </div>
+
+          </ng-container>
+
+        </div>
+      </ng-container>
+    </div>
+
+  </ng-container>
+</ng-container>
