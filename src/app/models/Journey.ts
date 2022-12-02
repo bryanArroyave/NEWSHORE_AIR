@@ -4,14 +4,26 @@
 import { Flight } from './Flight';
 
 export class Journey {
-  private readonly flights: Flight[];
+  private readonly _flights: Flight[];
 
   constructor(private readonly _origin: string) {
-    this.flights = [];
+    this._flights = [];
   }
 
-  addFligth(destination: string) {
-    this.flights.push(new Flight(destination));
+  addFligth(destination: string, price: number, flightCarrier: string, flightNumber: string) {
+    this._flights.push(new Flight(destination, price, flightCarrier, flightNumber));
+  }
+
+  searchFlight(destination: string) {
+    return this._flights.find(flight => flight.destination === destination);
+  }
+
+  hasFlight(destination: string) {
+    return this.flights.find(flight => flight.destination === destination);
+  }
+
+  get flights() {
+    return this._flights;
   }
 
 
