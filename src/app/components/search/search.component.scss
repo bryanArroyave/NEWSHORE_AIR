@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container__inputs {
+  grid-template-columns: repeat(3, 1fr);
+}

@@ -1,0 +1,33 @@
+.air__container {
+  padding: 3rem;
+}
+
+.banner {
+  position: sticky;
+  width: 100vw;
+  height: 80px;
+  background: var(--primary);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .name {
+    color: #fff;
+    font-weight: bolder;
+    font-size: 1rem;
+  }
+}
+
+.banner {
+  top: 0;
+  left: 0;
+}

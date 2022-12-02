@@ -1,0 +1,44 @@
+<ng-container *ngIf="this.form">
+  <form [formGroup]="form">
+    <div class="container__inputs">
+
+
+      <div [ngClass]="this.formService.getControlClass(this.form, 'origin') " class="cox-input-field">
+        <label for="origin">Origen: * </label>
+        <input appUppercase autocomplete="off" formControlName="origin" type="text" name="origin" id="origin" />
+
+        <p class="red" *ngIf="this.formService.hasError(this.form, 'origin')">
+          {{ this.formService.getErrorMessages(this.form, 'origin') }}
+        </p>
+      </div>
+
+      <div [ngClass]="this.formService.getControlClass(this.form, 'destination') " class="cox-input-field">
+        <label for="destination">Destino: * </label>
+        <input appUppercase autocomplete="off" formControlName="destination" type="text" name="destination"
+          id="destination" />
+
+        <p class="red" *ngIf="this.formService.hasError(this.form, 'destination')">
+          {{ this.formService.getErrorMessages(this.form, 'destination') }}
+        </p>
+      </div>
+
+      <div [ngClass]="this.formService.getControlClass(this.form, 'cant') " class="cox-input-field">
+        <label for="cant">Cantidad: * </label>
+        <input appUppercase autocomplete="off" formControlName="cant" type="number" name="cant" id="cant" />
+
+        <p class="red" *ngIf="this.formService.hasError(this.form, 'cant')">
+          {{ this.formService.getErrorMessages(this.form, 'cant') }}
+        </p>
+      </div>
+
+
+    </div>
+  </form>
+
+  <div class="container__button">
+
+    <button [disabled]="this.form.invalid" class="cox-btn cox-btn--primary" (click)="this.proccess()">
+      Buscar
+    </button>
+  </div>
+</ng-container>

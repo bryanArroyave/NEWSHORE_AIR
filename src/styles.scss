@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(https://oncredit-public-resources.coxti.com/gyf/styles/colors.css);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap);
+@import url(https://oncredit-public-resources.coxti.com/oncredit/styles/buttons.css);
+@import url(https://oncredit-public-resources.coxti.com/oncredit/styles/cards.css);
+@import url(https://oncredit-public-resources.coxti.com/oncredit/styles/text.css);
+@import url(https://oncredit-public-resources.coxti.com/oncredit/styles/utils.css);
+@import url(https://oncredit-public-resources.coxti.com/oncredit/styles/tooltips.css);
+@import url(https://oncredit-public-resources.coxti.com/oncredit/styles/inputs.css);
+@import url(https://oncredit-public-resources.coxti.com/oncredit/styles/scroll.css);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

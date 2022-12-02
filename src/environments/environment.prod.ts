@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  airUrl: 'https://recruiting-api.newshore.es/api/flights',
+  airDifficulty: 0,
 };
