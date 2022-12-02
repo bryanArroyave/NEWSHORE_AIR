@@ -4,12 +4,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { map } from 'rxjs';
+import { BehaviorSubject, catchError, map, throwError } from 'rxjs';
 import IFligthResponse from '../models/IFligthResponse';
 import { Journey } from '../models/Journey';
 
+
 @Injectable({ providedIn: 'root' })
+
 export class ConsumeService {
+  private _journeys: BehaviorSubject<Journey[]> = new BehaviorSubject([]);
   constructor(private readonly http: HttpClient) { }
 
   getFlights() {
@@ -18,24 +21,33 @@ export class ConsumeService {
       .get<any /* Observable<Journey> */>(
         `${environment.airUrl}/${environment.airDifficulty}`,
         options
-      )
-      .pipe(map(this.createData.bind(this)));
+      );
   }
 
   private createData(res: IFligthResponse[]) {
-    const journeys: Journey[] = [];
+    // const journeys: Journey[] = [];
+    // for (const data of res) {
+    //   let journey = this.findJourney(journeys, data.departureStation);
+    //   if (!journey) {
+    //     journey = new Journey(data.departureStation);
+    //     journeys.push(journey);
+    //   }
+    //   journey.addFligth(data.arrivalStation, data.price, data.flightCarrier, data.flightNumber);
+    // }
+    // this._journeys.next(journeys);
+    // return journeys;
+
+
     for (const data of res) {
-      let journey = this.findJourney(journeys, data.departureStation);
-      if (!journey) {
-        journey = new Journey(data.departureStation);
-        journeys.push(journey);
-      }
-      journey.addFligth(data.arrivalStation);
+
     }
-    return journeys;
   }
 
   private findJourney(journeys: Journey[], origin: string) {
     return journeys.find(journey => journey.origin === origin);
+  }
+
+  get journeys() {
+    return this._journeys.asObservable();
   }
 }
