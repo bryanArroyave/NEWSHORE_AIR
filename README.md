@@ -1,27 +1,27 @@
-# NewshoreAir
+# NewshoreAir - BRYAN ARROYAVE ORTIZ
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.
+El proyecto fue generado por [Angular CLI](https://github.com/angular/angular-cli) versión 13.2.1.
 
-## Development server
+## Inicializar en modo desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecutar `npm run dev` para lanzar en modo desarrollo. Navegar a `http://localhost:4201/`.
 
-## Code scaffolding
+## Funcionamiento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+_Problema 1_
 
-## Build
+Se hace unas modificaciones en el diagrama con el fin de no repetir la información.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[Diagrama](https://drive.google.com/file/d/1mIB2NAq8POukA-hyseWZTO41Qp7gJFaf/view?usp=sharing)
 
-## Running unit tests
+_Problema 2_
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Se hace el consumo una vez se inicia la aplicación, se puede cambiar la dificultad desde el environment con la variable 'airDifficulty'
 
-## Running end-to-end tests
+_Problema 3_
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Se implementa el algoritmo de floyd warshall para encontrar la ruta más barata del origen al destino, se puede configurar el número máximo de vuelos desde el componente del buscador de vuelos
 
-## Further help
+_Problema 4_
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Se configuran 3 monedas (Dólares, Euros y Pesos Colombianos)
